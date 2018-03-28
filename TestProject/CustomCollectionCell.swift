@@ -29,6 +29,8 @@ class CustomCollectionCell: UICollectionViewCell{
                 self?.imgView.clipsToBounds = true
                 self?.imgView.image = image
             }
+            
+            //comment 2
         }
     }
 }

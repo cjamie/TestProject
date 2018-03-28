@@ -33,6 +33,8 @@ class ViewController: UIViewController {
         appointments.getAppointments()
         setUpNavBar()
         setUpSegmented()
+        
+
 
     }
     @IBAction func toggleOutlet(_ sender: UISegmentedControl) {
