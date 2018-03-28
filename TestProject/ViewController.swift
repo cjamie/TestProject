@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         appointments.getAppointments()
         setUpNavBar()
         setUpSegmented()
-
+        //adding a comment 
     }
     @IBAction func toggleOutlet(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
