@@ -31,7 +31,6 @@ class ViewController: UIViewController {
 
         // Find Appointments using AppointmentService
         appointments.getAppointments()
-        
         setUpNavBar()
         setUpSegmented()
 
@@ -196,7 +195,6 @@ extension TableViewFunctions: UITableViewDataSource, UITableViewDelegate{
         cell.dateLabel.text = day
         cell.descLabel.text = element.providerSpecialty
         cell.timeNameLabel.text = hourMinString + " - Dr. " + lastName
-        
         cell.loadObjectImage(name: element.providerId!)
         
         return cell

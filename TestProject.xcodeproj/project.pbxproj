@@ -48,6 +48,7 @@
 		8468138B2044F4A0008DD7A1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D5BBE36F1E8E892E004F1A2D /* AppDelegate.swift */,
 				D5BBE3811E8E89C6004F1A2D /* AppointmentService.swift */,
 				D5BBE3831E8E8A20004F1A2D /* Appointment.swift */,
 			);
@@ -103,7 +104,6 @@
 				84681390204500DE008DD7A1 /* Service */,
 				8468138D2044F4B4008DD7A1 /* Controller */,
 				8468138B2044F4A0008DD7A1 /* Model */,
-				D5BBE36F1E8E892E004F1A2D /* AppDelegate.swift */,
 				8468138C2044F4AB008DD7A1 /* View */,
 				D5BBE3761E8E892E004F1A2D /* Assets.xcassets */,
 				D5BBE37B1E8E892E004F1A2D /* Info.plist */,
