@@ -21,5 +21,5 @@ struct Appointment {
     var address: String?
 
     var isAsthmaAppointment: Bool?
-    //test commit 
+    //test commit
 }
