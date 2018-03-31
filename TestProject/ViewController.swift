@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import OHHTTPStubs
 
 class ViewController: UIViewController {
 
@@ -33,6 +34,7 @@ class ViewController: UIViewController {
         appointments.getAppointments()
         setUpNavBar()
         setUpSegmented()
+        
         
 
 
