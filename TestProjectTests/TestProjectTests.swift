@@ -8,8 +8,9 @@
 
 import XCTest
 
-import OHHTTPStubs
 @testable import TestProject
+import OHHTTPStubs
+
 
 
 class TestProjectTests: XCTestCase {
@@ -24,12 +25,12 @@ class TestProjectTests: XCTestCase {
     }
     
     
-    func testSquareInt(){
-        let value = 3
-        let actual = value.square()
-        
-        XCTAssertEqual(actual, 9)
-    }
+//    func testSquareInt(){
+//        let value = 3
+//        let actual = value.square()
+//        
+//        XCTAssertEqual(actual, 9)
+//    }
     
     
     //basic network test
