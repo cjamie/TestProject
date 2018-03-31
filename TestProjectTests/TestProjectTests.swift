@@ -15,6 +15,7 @@ import OHHTTPStubs
 
 class TestProjectTests: XCTestCase {
     
+    //basic test
     func testHelloWorld(){
         var helloWorld: String?
         
@@ -24,13 +25,6 @@ class TestProjectTests: XCTestCase {
         XCTAssertEqual("hello world", helloWorld!)
     }
     
-    
-//    func testSquareInt(){
-//        let value = 3
-//        let actual = value.square()
-//        
-//        XCTAssertEqual(actual, 9)
-//    }
     
     
     //basic network test
@@ -79,8 +73,8 @@ class TestProjectTests: XCTestCase {
         
     }
     
-    //network test with stubbing.
-    func testStubbedCalls(){
+    //network test
+    func testCallsWithUrlSession(){
         let promise = expectation(description: "call should succeed")
         let urlString = "http://images.apple.com/support/assets/images/products/iphone/hero_iphone4-5_wide.png"
         
@@ -104,7 +98,7 @@ class TestProjectTests: XCTestCase {
     }
     
     //this is for am image stub. i replaced it with stub.jpg for hypothetical image link
-    //TODO: make sure these two images are the EXAXT same.
+    //TODO: make sure these two images are the EXACT same. (maybe with XCUITesting)
     func testStubbedCall1(){
         
         // Setup network stubs
@@ -116,7 +110,7 @@ class TestProjectTests: XCTestCase {
         let imageData:Data = UIImageJPEGRepresentation(#imageLiteral(resourceName: "stub.jpg"),1)!
         //        print("imageData: \(imageData.base64EncodedString())")
         let promise = expectation(description: "image call should succeed")
-        stub(condition: isHost(testHost) && isPath("/P/\(id)/100x100")) { //path was annoying to find
+        stub(condition: isHost(testHost) && isPath("/P/\(id)/100x100")) {
             _ in
             return OHHTTPStubsResponse(data: imageData, statusCode: 200, headers: .none)
         }
@@ -142,82 +136,17 @@ class TestProjectTests: XCTestCase {
     
     
     //stubbed call for json. (there is no network call for pokemon so i took one from another project)
+    //BLOCKER: getting errors: "linker command failed with exit code 1 (use -v to see invocation)"
     func testStubbedCall2(){
-        //        let pokemonId = 23
+        let pokemonId = 23
         
-        guard let gitUrl = URL(string: "https://api.github.com/users/shashikant86") else { return }
-        let promise = expectation(description: "Simple Request")
-        URLSession.shared.dataTask(with: gitUrl) { (data, response
-            , error) in
-            guard let data = data else { return }
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)
-                if let result = json as? NSDictionary {
-                    XCTAssertTrue(result["name"] as! String == "Shashikant")
-                    XCTAssertTrue(result["location"] as! String == "London")
-                    promise.fulfill()
-                }
-            } catch let err {
-                print("Err", err)
-            }
-            }.resume()
-        waitForExpectations(timeout: 5, handler: nil)
-        
-        
-        
-        //                let stubbedJSON = [
-        //                    "id": id,
-        //                    "foo": "some text",
-        //                    "bar": "some other text",
-        //                    ]
-        
-        //        NetworkService.downloadPokemon(for: pokemonId) {
-        //            (pokemon, error) in
-        //            print("completion")
-        //        }
-        
-        // Setup network stubs
-        //        let testHost = "te.st"
-        //        let id = "42-abc"
-        //        let stubbedJSON = [
-        //            "id": id,
-        //            "foo": "some text",
-        //            "bar": "some other text",
-        //            ]
-        //        stub(isHost(testHost) && isPath("/resources/\(id)")) { _ in
-        //            return OHHTTPStubsResponse(
-        //                JSONObject: stubbedJSON,
-        //                statusCode: 200,
-        //                headers: .None
-        //            )
-        //        }
-        //        // Setup system under test
-        //        let client = APIClient(baseURL: NSURL(string: "http://\(testHost)")!)
-        //        let expectation = self.expectationWithDescription("calls the callback with a resource object")
-        //
-        //        // Act
-        //        //
-        //        client.getResource(withId: id) { resource, error in
-        //
-        //            // Assert
-        //            //
-        //            XCTAssertNil(error)
-        //            XCTAssertEqual(resource?.id, stubbedJSON["id"])
-        //            XCTAssertEqual(resource?.aProperty, stubbedJSON["foo"])
-        //            XCTAssertEqual(resource?.anotherPropert, stubbedJSON["bar"])
-        //
-        //            expectation.fulfill()
-        //        }
-        //
-        //        self.waitForExpectationsWithTimeout(0.3, handler: .None)
-        //
-        //        // Tear Down
-        //        //
-        //        OHHTTPStubs.removeAllStubs()
+        NetworkService.downloadPokemon(for: pokemonId) {
+            (pokemon, error) in
+            print("handle pokemon here")
+        }
         
         
     }
-    
 }
 
 

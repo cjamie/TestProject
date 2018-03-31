@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		843458F4206F409300579543 /* TestProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843458F3206F409300579543 /* TestProjectTests.swift */; };
+		843458FC206F457900579543 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843458FB206F457900579543 /* Pokemon.swift */; };
+		84345904206F474D00579543 /* stub.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84345902206F474D00579543 /* stub.jpg */; };
+		84345905206F474D00579543 /* stub.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84345902206F474D00579543 /* stub.jpg */; };
+		84345906206F474D00579543 /* stub.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84345903206F474D00579543 /* stub.txt */; };
+		84345907206F474D00579543 /* stub.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84345903206F474D00579543 /* stub.txt */; };
 		8468138F204500CC008DD7A1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468138E204500CC008DD7A1 /* NetworkService.swift */; };
 		8468139220452933008DD7A1 /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468139120452933008DD7A1 /* CustomCollectionCell.swift */; };
 		847716A620453A7A00D7B5BD /* CustomPastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847716A520453A7A00D7B5BD /* CustomPastCell.swift */; };
@@ -37,6 +42,9 @@
 		843458F1206F409300579543 /* TestProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		843458F3206F409300579543 /* TestProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProjectTests.swift; sourceTree = "<group>"; };
 		843458F5206F409300579543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		843458FB206F457900579543 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		84345902206F474D00579543 /* stub.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stub.jpg; sourceTree = "<group>"; };
+		84345903206F474D00579543 /* stub.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stub.txt; sourceTree = "<group>"; };
 		8468138E204500CC008DD7A1 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		8468139120452933008DD7A1 /* CustomCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
 		847716A520453A7A00D7B5BD /* CustomPastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPastCell.swift; sourceTree = "<group>"; };
@@ -97,9 +105,28 @@
 			path = TestProjectTests;
 			sourceTree = "<group>";
 		};
+		843458FD206F459100579543 /* Pokemon */ = {
+			isa = PBXGroup;
+			children = (
+				843458FB206F457900579543 /* Pokemon.swift */,
+			);
+			path = Pokemon;
+			sourceTree = "<group>";
+		};
+		84345901206F474300579543 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				84345902206F474D00579543 /* stub.jpg */,
+				84345903206F474D00579543 /* stub.txt */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
 		8468138B2044F4A0008DD7A1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				84345901206F474300579543 /* Stubs */,
+				843458FD206F459100579543 /* Pokemon */,
 				D5BBE36F1E8E892E004F1A2D /* AppDelegate.swift */,
 				D5BBE3811E8E89C6004F1A2D /* AppointmentService.swift */,
 				D5BBE3831E8E8A20004F1A2D /* Appointment.swift */,
@@ -254,6 +281,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84345907206F474D00579543 /* stub.txt in Resources */,
+				84345905206F474D00579543 /* stub.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +291,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5BBE37A1E8E892E004F1A2D /* LaunchScreen.storyboard in Resources */,
+				84345904206F474D00579543 /* stub.jpg in Resources */,
 				D5BBE3771E8E892E004F1A2D /* Assets.xcassets in Resources */,
+				84345906206F474D00579543 /* stub.txt in Resources */,
 				D5BBE3751E8E892E004F1A2D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5BBE3821E8E89C6004F1A2D /* AppointmentService.swift in Sources */,
+				843458FC206F457900579543 /* Pokemon.swift in Sources */,
 				D5BBE3841E8E8A20004F1A2D /* Appointment.swift in Sources */,
 				8468139220452933008DD7A1 /* CustomCollectionCell.swift in Sources */,
 				847716A620453A7A00D7B5BD /* CustomPastCell.swift in Sources */,
